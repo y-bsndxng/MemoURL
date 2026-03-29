@@ -121,7 +121,7 @@ function App() {
                 type="text"
                 value={tags}
                 onChange={(e) => setTags(e.target.value)}
-                placeholder="Recipe, 時短"
+                placeholder="例: Recipe, 時短"
               />
             </label>
 
