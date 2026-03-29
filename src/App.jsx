@@ -91,7 +91,7 @@ function App() {
                 type="text"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                placeholder="例: React の useEffect メモ"
+                placeholder="例: お気に入りのレシピ"
               />
             </label>
 
@@ -121,7 +121,7 @@ function App() {
                 type="text"
                 value={tags}
                 onChange={(e) => setTags(e.target.value)}
-                placeholder="React, Vite, フロントエンド"
+                placeholder="Recipe, 時短"
               />
             </label>
 
