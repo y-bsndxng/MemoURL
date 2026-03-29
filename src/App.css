@@ -1,0 +1,233 @@
+:root {
+  --bg: #0f172a;
+  --text: #e5e7eb;
+  --subtext: #94a3b8;
+  --panel-bg: #111827;
+  --panel-border: #334155;
+  --input-bg: #1e293b;
+  --input-border: #475569;
+  --input-text: #f8fafc;
+  --placeholder: #94a3b8;
+  --link: #60a5fa;
+  --primary: #3b82f6;
+  --primary-text: #ffffff;
+  --danger: #ef4444;
+  --tag-bg: #1e3a8a;
+  --tag-text: #bfdbfe;
+  --card-bg: #0b1220;
+  --empty-bg: #111827;
+  --empty-border: #475569;
+  --shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.app-header {
+  margin-bottom: 24px;
+}
+
+.app-header h1 {
+  margin: 0 0 8px;
+  font-size: 32px;
+}
+
+.app-header p {
+  margin: 0;
+  color: var(--subtext);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.panel {
+  background: var(--panel-bg);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--panel-border);
+}
+
+.panel h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+.memo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.memo-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.memo-form input,
+.memo-form textarea,
+.list-header input {
+  width: 100%;
+  border: 1px solid var(--input-border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: var(--input-bg);
+  color: var(--input-text);
+  caret-color: var(--input-text);
+  -webkit-text-fill-color: var(--input-text);
+}
+
+.memo-form input::placeholder,
+.memo-form textarea::placeholder,
+.list-header input::placeholder {
+  color: var(--placeholder);
+}
+
+.memo-form textarea {
+  resize: vertical;
+}
+
+.memo-form button {
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  background: var(--primary);
+  color: var(--primary-text);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.memo-form button:hover,
+.delete-button:hover {
+  opacity: 0.9;
+}
+
+.list-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.memo-count {
+  margin-bottom: 16px;
+  color: var(--subtext);
+  font-size: 14px;
+}
+
+.memo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.memo-card {
+  border: 1px solid var(--panel-border);
+  border-radius: 10px;
+  padding: 16px;
+  background: var(--card-bg);
+}
+
+.memo-card-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: start;
+}
+
+.memo-card-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.delete-button {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: var(--danger);
+  color: white;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.memo-url,
+.memo-text,
+.memo-date {
+  margin: 12px 0 0;
+}
+
+.memo-date {
+  color: var(--subtext);
+}
+
+.memo-text {
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  font-size: 13px;
+}
+
+.empty {
+  padding: 24px;
+  text-align: center;
+  border: 1px dashed var(--empty-border);
+  border-radius: 10px;
+  color: var(--subtext);
+  background: var(--empty-bg);
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
