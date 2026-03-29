@@ -153,22 +153,19 @@ function App() {
               filteredItems.map((item) => (
                 <article key={item.id} className="memo-card">
                   <div className="memo-card-header">
-                    <h3>{item.title}</h3>
-                    <button
-                      className="delete-button"
-                      onClick={() => handleDelete(item.id)}
-                    >
+                    {item.url ? (
+                      <h3 className="memo-title">
+                        <a href={item.url} target="_blank" rel="noreferrer">
+                          {item.title}
+                        </a>
+                      </h3>
+                    ) : (
+                      <h3 className="memo-title">{item.title}</h3>
+                    )}
+                    <button className="delete-button" onClick={() => handleDelete(item.id)}>
                       削除
                     </button>
                   </div>
-
-                  {item.url && (
-                    <p className="memo-url">
-                      <a href={item.url} target="_blank" rel="noreferrer">
-                        {item.url}
-                      </a>
-                    </p>
-                  )}
 
                   {item.memo && <p className="memo-text">{item.memo}</p>}
 
